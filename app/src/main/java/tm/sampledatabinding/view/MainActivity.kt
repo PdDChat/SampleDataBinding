@@ -9,11 +9,14 @@ import tm.sampledatabinding.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
+    private var mViewModel: MainViewModel = MainViewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding =
-            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
-        binding.viewModel = MainViewModel()
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        binding.viewModel = mViewModel
+
+        mViewModel.onCreate()
     }
 }

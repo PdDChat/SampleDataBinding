@@ -1,5 +1,11 @@
 package tm.sampledatabinding.viewmodel
 
+import android.databinding.ObservableField
+
 class MainViewModel {
-     var text = "test"
+     var bindingText = ObservableField<String>()
+
+     fun onCreate() {
+          bindingText.set("text")
+     }
 }
